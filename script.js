@@ -5,6 +5,7 @@ window.onload = function () {
     (window.innerHeight - document.getElementById("Nao").offsetHeight) / 2;
   document.getElementById("NaoWrapper").style.left = x + "px";
   document.getElementById("NaoWrapper").style.top = y + "px";
+  i = 0;
 };
 
 document.getElementById("Sim").onclick = function () {
@@ -16,6 +17,7 @@ document.getElementById("Nao").onclick = function () {
 };
 document.getElementById("Nao").onmouseover = function () {
   moveButton();
+  audio();
 };
 
 function moveButton() {
@@ -29,4 +31,13 @@ function moveButton() {
   );
   document.getElementById("NaoWrapper").style.left = x + "px";
   document.getElementById("NaoWrapper").style.top = y + "px";
+  i++;
+}
+
+function audio() {
+  if (i == 5) {
+    const audio = new Audio("pix.mp3");
+    audio.play();
+    i = 0;
+  }
 }
