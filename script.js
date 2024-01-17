@@ -6,6 +6,7 @@ window.onload = function () {
   document.getElementById("NaoWrapper").style.left = x + "px";
   document.getElementById("NaoWrapper").style.top = y + "px";
   i = 0;
+  move = 0;
 };
 
 document.getElementById("Sim").onclick = function () {
@@ -13,11 +14,17 @@ document.getElementById("Sim").onclick = function () {
 };
 
 document.getElementById("Nao").onclick = function () {
-  alert("Realizei o PIX mesmo assim kkkkkkkkkkkk");
+  if (move == 1) {
+    alert("Realizei o PIX mesmo assim kkkkkkkkkkkk");
+  }
+  moveButton();
+  move = 1;
 };
 document.getElementById("Nao").onmouseover = function () {
-  moveButton();
-  audio();
+  if (move == 1) {
+    moveButton();
+    audio();
+  }
 };
 
 function moveButton() {
