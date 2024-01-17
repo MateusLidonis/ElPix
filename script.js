@@ -1,0 +1,32 @@
+window.onload = function () {
+  // Posicione o botão "Não" no centro da tela quando a página for carregada
+  var x = (window.innerWidth - document.getElementById("Nao").offsetWidth) / 2;
+  var y =
+    (window.innerHeight - document.getElementById("Nao").offsetHeight) / 2;
+  document.getElementById("NaoWrapper").style.left = x + "px";
+  document.getElementById("NaoWrapper").style.top = y + "px";
+};
+
+document.getElementById("Sim").onclick = function () {
+  alert("PIX realizado!");
+};
+
+document.getElementById("Nao").onclick = function () {
+  alert("Realizei o PIX mesmo assim kkkkkkkkkkkk");
+};
+document.getElementById("Nao").onmouseover = function () {
+  moveButton();
+};
+
+function moveButton() {
+  var x = Math.floor(
+    Math.random() *
+      (window.innerWidth - document.getElementById("Nao").offsetWidth)
+  );
+  var y = Math.floor(
+    Math.random() *
+      (window.innerHeight - document.getElementById("Nao").offsetHeight)
+  );
+  document.getElementById("NaoWrapper").style.left = x + "px";
+  document.getElementById("NaoWrapper").style.top = y + "px";
+}
