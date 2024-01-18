@@ -21,7 +21,7 @@ document.getElementById("Nao").onclick = function () {
   move = 1;
 };
 
-if (window.screen.width <= 425 && window.screen.height <= 835) {
+if (window.screen.width <= 625 && window.screen.height <= 835) {
   document.getElementById("Nao").onclick = function () {
     moveButton();
     audio();
