@@ -20,12 +20,20 @@ document.getElementById("Nao").onclick = function () {
   moveButton();
   move = 1;
 };
-document.getElementById("Nao").onmouseover = function () {
-  if (move == 1) {
+
+if (window.screen.width <= 425 && window.screen.height <= 835) {
+  document.getElementById("Nao").onclick = function () {
     moveButton();
     audio();
-  }
-};
+  };
+} else {
+  document.getElementById("Nao").onmouseover = function () {
+    if (move == 1) {
+      moveButton();
+      audio();
+    }
+  };
+}
 
 function moveButton() {
   var x = Math.floor(
